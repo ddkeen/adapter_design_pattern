@@ -7,6 +7,7 @@ public class CD implements DigitalAlbum {
     private int currentIndex;
 
     public CD(String song1, String song2, String song3, String song4, String song5) {
+        songs = new ArrayList<String>();
         songs.add(song1);
         songs.add(song2);
         songs.add(song3);
@@ -33,7 +34,7 @@ public class CD implements DigitalAlbum {
     public String prevSong() {
         if(currentIndex > 0) {
             currentIndex--;
-            return "Skipping back and playing: " + songs.get(currentIndex);
+            return "Skipping back and playing: " + songs.get(currentIndex-1);
         }
         else {
             return "Already at the beggining of the CD";
@@ -42,9 +43,9 @@ public class CD implements DigitalAlbum {
     }
 
     public String nextSong() {
-        if(currentIndex < 4) {
+        if(currentIndex < 5) {
             currentIndex++;
-            return "Advancing to the next song and playing: " + songs.get(currentIndex);
+            return "Playing: " + (currentIndex) + ": " + songs.get(currentIndex-1);
         }
         else {
             currentIndex = 0;

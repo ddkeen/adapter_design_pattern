@@ -7,7 +7,7 @@ public class AnalogAdapter implements AnalogAlbum {
     }
 
     public String play() {
-        return album.playFromBeginning();
+        return album.nextSong();
     }
 
     public String rewind() {

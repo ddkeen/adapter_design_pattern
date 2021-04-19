@@ -7,6 +7,7 @@ public class Cassett implements AnalogAlbum {
     private int currentIndex;
 
     public Cassett(String song1, String song2, String song3, String song4, String song5) {
+        songs = new ArrayList<String>();
         songs.add(song1);
         songs.add(song2);
         songs.add(song3);
@@ -28,7 +29,7 @@ public class Cassett implements AnalogAlbum {
             return "Fully Re-Wound";
         else {
             currentIndex--;
-            return "Rewinding to song " + (currentIndex +1) + ": " + songs.get(currentIndex);
+            return "Rewinding to song " + (currentIndex +1);
         }
     }
 
@@ -39,7 +40,7 @@ public class Cassett implements AnalogAlbum {
                 return "Forwarded to the end of the cassett";
             }
             else {
-                return "Forwarding to song " + (currentIndex) + ": " + songs.get(currentIndex-1);
+                return "Forwarding to song " + (currentIndex+1);
             }
         }
         else {
