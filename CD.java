@@ -90,7 +90,7 @@ public class CD implements DigitalAlbum {
         return "Stopping CD and ejecting";
     }
 
-      /**
+    /**
      * Pauses the CD
      * @return String a message explaining this
      */
